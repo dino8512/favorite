@@ -49,21 +49,91 @@
         width: 200px;
     }
 
-    
+    .ham {
+        width: 40px;
+        height: 40px;
+        border-radius: 5px;
+        background: rgba(0,0,0,.3);
+        display: block;
+        position: relative;
+    }
+
+    .ham-origin {
+        position: absolute;
+        top: 2%;
+        left: 20%;
+    }
+
+    .ham-bar {
+        height: 2px;
+        width: 26px;
+        position: absolute;
+        background: white;
+        margin: -1px 0 0 -13px;
+        transition: all .5s;
+    }
+
+    .ham-bar--top {
+        transform: translateY(-6px);
+    }
+
+    .ham-bar--bottom {
+        transform: translateY(6px);
+    }
 </style>
 <html>
 
 <head>
     <meta charset="utf-8">
     <title>My Personal Page</title>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function() {
+            $(".bott").slideUp(0);
+            var newtext=["home","about me","favorite","contact"]
+            var oldtext=["首頁","關於我","喜愛的","聯繫"]
+            $(".ham-origin").click(function(){
+                $(".bott").slideToggle()
+            })
+            $(".bot1").mouseover(function(){
+                $(".bot1").text(newtext[0])
+            })
+            $(".bot1").mouseleave(function(){
+                $(".bot1").text(oldtext[0])
+            })
+            $(".bot2").mouseover(function(){
+                $(".bot2").text(newtext[1])
+            })
+            $(".bot2").mouseleave(function(){
+                $(".bot2").text(oldtext[1])
+            })
+            $(".bot3").mouseover(function(){
+                $(".bot3").text(newtext[2])
+            })
+            $(".bot3").mouseleave(function(){
+                $(".bot3").text(oldtext[2])
+            })
+            $(".bot4").mouseover(function(){
+                $(".bot4").text(newtext[3])
+            })
+            $(".bot4").mouseleave(function(){
+                $(".bot4").text(oldtext[3])
+            })
+        })
+      </script>
 </head>
 
 <body class="back">
+    <div class="ham-origin">
+        <div class="ham-bar ham-bar--top"></div>
+        <div class="ham-bar ham-bar--middle"></div>
+        <div class="ham-bar ham-bar--bottom"></div>
+    </div>
     <div class="bot">
-        <a class="bott" href="https://dino8512.github.io/">home</a>
-        <a class="bott" href="https://dino8512.github.io/about/">about me</a>
-        <a class="bott" href="https://dino8512.github.io/favorite/">favorite</a>
-        <a class="bott" href="https://dino8512.github.io/connect/">contact</a>
+        <a class="bott bot1" href="https://dino8512.github.io/">首頁</a>
+        <a class="bott bot2" href="https://dino8512.github.io/about/">關於我</a>
+        <a class="bott bot3" href="https://dino8512.github.io/favorite/">喜愛的</a>
+        <a class="bott bot4" href="https://dino8512.github.io/connect/">聯繫</a>
     </div>
     <div>
         <h1 class="quote">1.玩電動</h1>
